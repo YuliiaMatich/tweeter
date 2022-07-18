@@ -1,9 +1,9 @@
 "use strict";
 
-const Chance      = require("chance"),
+const Chance      = require("chance"), //  library,  a minimalist generator of random [1] strings, numbers, etc.
       chance      = new Chance();
 
-const md5 = require('md5');
+const md5 = require('md5'); // hash function which produces 128-bit hashes
 
 
 module.exports = {

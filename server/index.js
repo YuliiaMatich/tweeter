@@ -4,7 +4,7 @@
 
 const PORT          = 8080;
 const express       = require("express");
-const bodyParser    = require("body-parser");
+const bodyParser    = require("body-parser"); // an npm library used to process data sent through an HTTP request body
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
