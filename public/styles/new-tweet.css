@@ -1,0 +1,27 @@
+.new-tweet {
+  width: 90%;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  align-items:normal;
+}
+
+
+.container button {
+  background-color: #4056A1;
+  font-family: 'Bungee', cursive;
+  color: white;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', cursive;
+}
+
+form textarea {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
