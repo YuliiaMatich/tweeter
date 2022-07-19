@@ -18,6 +18,10 @@
   font-family: 'Bungee', cursive;
 }
 
+.counter-error {
+  color: red
+}
+
 form textarea {
   border-top: none;
   border-left: none;
