@@ -3,6 +3,8 @@ $(document).ready(function() {  //  runs a callback when the DOM is ready to be 
     $('.counter').text(140 - this.value.length); // "counter class is called. this.value = intput value of tweet text"
     if ( $('.counter').text() < 0 ) {
       $('.counter').addClass('counter-error');
+    } else {
+      $('.counter').removeClass('counter-error');
     }
   })
 });
