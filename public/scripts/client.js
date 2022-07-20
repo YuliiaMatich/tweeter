@@ -41,6 +41,13 @@ $(document).ready(function () { // to add it to the html page when document is l
   $form.on('submit', function (event) { // event listener
     event.preventDefault(); // to prevent the default form submission behaviour
     console.log($('#tweet-text').val());
+    if (!$('#tweet-text').val()) {
+      return alert('Your tweet is empty')
+    }
+    if ($('#tweet-text').val().length > 140) {
+      return alert('Exceeded characters limit')
+    }
+
     $.ajax({
       type: "POST",
       url: "/tweets",
@@ -48,11 +55,12 @@ $(document).ready(function () { // to add it to the html page when document is l
     });
   });
 
+
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' }) // Ajax GET request to  /tweets to server
-    .then(function (serverTweets) { // callback when service responds
-      renderTweets(serverTweets); // send received array with tweets to renderTweets function
-    });
+      .then(function (serverTweets) { // callback when service responds
+        renderTweets(serverTweets); // send received array with tweets to renderTweets function
+      });
   }
 
   loadTweets();
