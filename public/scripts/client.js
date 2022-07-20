@@ -29,10 +29,11 @@ $(document).ready(function () { // to add it to the html page when document is l
   }
 
   const renderTweets = function (tweets) {
-
+    const container =  $('#tweets-container');
+    container.empty();
     for (user of tweets) {// loops through tweets
       const $tweet = createTweetElement(user); // calls createTweetElement for each tweet
-      $('#tweets-container').prepend($tweet);// takes return value and appends it to the tweets container
+      container.prepend($tweet);// takes return value and appends it to the tweets container
     }
   }
 
@@ -52,7 +53,8 @@ $(document).ready(function () { // to add it to the html page when document is l
       type: "POST",
       url: "/tweets",
       data: $('.new-tweet-form').serialize()
-    });
+    })
+    .then(loadTweets());
   });
 
 
@@ -62,6 +64,8 @@ $(document).ready(function () { // to add it to the html page when document is l
         renderTweets(serverTweets); // send received array with tweets to renderTweets function
       });
   }
+
+  
 
   loadTweets();
 });
