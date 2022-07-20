@@ -14,7 +14,7 @@ $(document).ready(function () { // to add it to the html page when document is l
           </div>
           <div class="user-name">${tweetData.user.handle}</div>
         </header>
-        <div class="added-tweet-text">${tweetData.content.text}</div>
+        <div class="added-tweet-text">${escape(tweetData.content.text)}</div>
         <footer>
           <p>${timeago.format(tweetData.created_at)}</p>
           <div class="icons">
@@ -65,7 +65,11 @@ $(document).ready(function () { // to add it to the html page when document is l
       });
   }
 
-  
+  const escape = function (str) { // a function to escape some text
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   loadTweets();
 });
