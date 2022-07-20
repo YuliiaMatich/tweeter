@@ -76,7 +76,23 @@ $(document).ready(function () { // to add it to the html page when document is l
   }
 
 
+  const $form = $('.new-tweet-form');
+  $form.on('submit', function (event) { // event listener
+    event.preventDefault(); // to prevent the default form submission behaviour
+    console.log($('#tweet-text').val());
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $('.new-tweet-form').serialize()
+    });
+  });
+
 
   renderTweets(data)
 });
+
+
+
+
+
 
