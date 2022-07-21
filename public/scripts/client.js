@@ -43,11 +43,16 @@ $(document).ready(function () { // to add it to the html page when document is l
     event.preventDefault(); // to prevent the default form submission behaviour
     console.log($('#tweet-text').val());
     if (!$('#tweet-text').val()) {
-      return alert('Your tweet is empty')
+      $('.error-message').slideUp();
+      return $('.error-message').text('Your tweet is empty.').slideDown();
     }
+    
     if ($('#tweet-text').val().length > 140) {
-      return alert('Exceeded characters limit')
+      $('.error-message').slideUp();
+      return $('.error-message').text('Characters limit was exceeded.').slideDown();
+      
     }
+    $('.error-message').slideUp();
 
     $.ajax({
       type: "POST",

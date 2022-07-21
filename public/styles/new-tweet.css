@@ -29,3 +29,10 @@ form textarea {
   border-bottom: 3px solid black;
   width: 100%;
 }
+
+.error-message {
+  background-color: #f6cccc;
+  color: darkred;
+  padding: 11px;
+  display:none
+}
