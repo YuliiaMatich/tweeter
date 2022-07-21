@@ -40,7 +40,6 @@ $(document).ready(function () { // to add it to the html page when document is l
 
   const $form = $('.new-tweet-form');
   $form.on('submit', function (event) { // event listener
-    console.log('submit')
     event.preventDefault(); // to prevent the default form submission behaviour
     console.log($('#tweet-text').val());
     if (!$('#tweet-text').val()) {
@@ -61,7 +60,9 @@ $(document).ready(function () { // to add it to the html page when document is l
       data: $('.new-tweet-form').serialize()
     })
       .then(() => {
-        loadTweets()
+        $('#tweet-text').val('');
+        $('.counter').val(140);
+        loadTweets();
       });
   });
 
