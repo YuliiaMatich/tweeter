@@ -46,3 +46,11 @@
   }
 
   }
+
+  @media only screen and (max-width: 1023px) {
+  nav {
+    background-color: #b3aa00;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+
+  }
+  }
